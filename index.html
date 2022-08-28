@@ -5,25 +5,33 @@ doctype <!DOCTYPE html>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Challenge One Next</title>
-        <link rel="stylesheet" href="style.css"
+        <link rel="stylesheet" href="style.css">
+        
     </head>
     <body>
         <div class="container">
             <div class="logo">
-                <h1>Aca va el logo</h1>
+                <img class="logoImg" src="./imagenes/Logo.png" alt="imagen de logo Alura">
+                <h1 class="tittle">Secret message encryptor</h1>
             </div>
 
             <div class="left">
-                <h1>Aca va el panel izquierdo</h1>
+                <input class="text-input" id="inputTexto" type="text" placeholder="Ingrese su texto aquí">
             </div>
 
             <div class="right">
-                <h1>Aca va el panel derecho</h1>
+                <img src="/imagenes/muneco.png"id="imgDer">
+                <h1 id="texto">Ningun mensaje fue encontrado</h1>
+                <textarea  id="texto2" name = "name" rows="8" cols="80">Ingrese el texto que desees encriptar o desencriptar.</textarea>
+                <button id="copiar" type = "button" name="button" onclick="encriptar()">¡copiar!</button>
             </div>
             <div class="left-button">
-                <h1>Aca va unos botones</h1>
+                <p>Solo minusculas y sin acentos</p>
+                <button type= "button" id="btn-encriptar" onclick = "Encriptar()">Encriptar</button>
+                <button type="button" id="btn-desencriptar" onclick = "Desencriptar()">Desencriptar</button>
             </div>
 
         </div>
+        <script type="text/javascript" src="/script.js"></Script>
     </body>
 </html>
