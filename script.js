@@ -4,11 +4,11 @@ function encriptar() {
     var texto = document.getElementById("inputTexto").value.tolowerCase();
 
 
-    var txtCifrado = texto.replace (/e/ign, "enter");
-    var txtCifrado = texto.replace (/o/ign, "ober");
-    var txtCifrado = texto.replace (/i/ign, "ines");
-    var txtCifrado = texto.replace (/a/ign, "ai");
-    var txtCifrado = texto.replace (/u/ign, "ufat");
+    var txtCifrado = texto.replace (/e/igm, "enter");
+    var txtCifrado = texto.replace (/o/igm, "ober");
+    var txtCifrado = texto.replace (/i/igm, "ines");
+    var txtCifrado = texto.replace (/a/igm, "ai");
+    var txtCifrado = texto.replace (/u/igm, "ufat");
 
     document.getElementById("imgDer").style.display = "none";
     document.getElementById("texto").style.display = "none";
@@ -22,11 +22,11 @@ function desencriptar() {
     var texto = document.getElementById("inputTexto").value.tolowerCase();
 
 
-    var txtCifrado = texto.replace (/enter/ign, "e");
-    var txtCifrado = texto.replace (/ober/ign, "o");
-    var txtCifrado = texto.replace (/ines/ign, "i");
-    var txtCifrado = texto.replace (/ai/ign, "a");
-    var txtCifrado = texto.replace (/ufat/ign, "u");
+    var txtCifrado = texto.replace (/enter/igm, "e");
+    var txtCifrado = texto.replace (/ober/igm, "o");
+    var txtCifrado = texto.replace (/ines/igm, "i");
+    var txtCifrado = texto.replace (/ai/igm, "a");
+    var txtCifrado = texto.replace (/ufat/igm, "u");
 
     document.getElementById("imgDer").style.display = "none";
     document.getElementById("texto").style.display = "none";
