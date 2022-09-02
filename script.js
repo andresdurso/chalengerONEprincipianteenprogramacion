@@ -1,34 +1,32 @@
+const inputTexto = document.querySelector(".input-text");
+const mensaje = document.querySelector(".mensaje");
+const btnCopy = document.querySelector(".copiar");
 
+function btnEncriptar() {
+    const textoEncriptado = encriptar(inputTexto.value)
+    mensaje.value=textoEncriptado
+    mensaje.style.backgroundImage="none"
+    inputTexto.value = ""
+    btnCopy.style.display = "block"
 
-function encriptar() {
-    var texto = document.getElementById("inputTexto").value.tolowerCase();
-    var txtCifrado = texto.replace (/e/igm, "enter");
-    var txtCifrado = texto.replace (/o/igm, "ober");
-    var txtCifrado = texto.replace (/i/igm, "ines");
-    var txtCifrado = texto.replace (/a/igm, "ai");
-    var txtCifrado = texto.replace (/u/igm, "ufat");
-    document.getElementById("imgDer").style.display = "none";
-    document.getElementById("texto").style.display = "none";
-    document.getElementsById("texto2").innerHTML = txtCifrado;
-    document.getElementById("copiar").style.display = "show";
-    document.getElementById("copiar").style.display = "inherit";
 }
-function desencriptar() {
-    var texto = document.getElementById("inputTexto").value.tolowerCase();
-    var txtCifrado = texto.replace (/enter/igm, "e");
-    var txtCifrado = texto.replace (/ober/igm, "o");
-    var txtCifrado = texto.replace (/ines/igm, "i");
-    var txtCifrado = texto.replace (/ai/igm, "a");
-    var txtCifrado = texto.replace (/ufat/igm, "u");
-    document.getElementById("imgDer").style.display = "none";
-    document.getElementById("texto").style.display = "none";
-    document.getElementsById("texto2").innerHTML = txtCifrado;
-    document.getElementById("copiar").style.display = "show";
-    document.getElementById("copiar").style.display = "inherit";
+
+function encriptar(stringEncriptada) {
+let matrizCodigo =[["e", "enter"],["i", "ines"],["a", "ai"], ["o", "ober"],["u","ufat"]];
+stringEncriptada=stringEncriptada.toLowerCase();
+
+for(let i=0; i <matrizCodigo.length; i++) {
+    if(stringEncriptada.includes(matrizCodigo[i][o])){
+        stringEncriptada = stringEncriptada.replaceAll(matrizCodigo[i][o], matrizCodigo [i][1])
+        }
+    }
+    
 }
+return stringEncriptada;
+
 function copiar() {
-    var contenido = document.querySelector("#texto2");
-    contenido.Select();
-    document.execCommand("copy");
-    alert ("¡Se copió!")
+    mensaje.select();
+    Navigator.clipboar.writeText(mensaje.value)
+    mensaje.value="";
+    alert("Texto Copiado")
 }
