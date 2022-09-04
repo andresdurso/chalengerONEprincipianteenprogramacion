@@ -1,6 +1,9 @@
-const inputTexto = document.querySelector(".input-text");
+const inputTexto = document.querySelector(".input-texto");
 const mensaje = document.querySelector(".mensaje");
 const btnCopy = document.querySelector(".copiar");
+btnCopy.style.display = "none"
+
+//encriptar mensaje
 
 function btnEncriptar() {
     const textoEncriptado = encriptar(inputTexto.value)
@@ -13,20 +16,46 @@ function btnEncriptar() {
 
 function encriptar(stringEncriptada) {
 let matrizCodigo =[["e", "enter"],["i", "ines"],["a", "ai"], ["o", "ober"],["u","ufat"]];
-stringEncriptada=stringEncriptada.toLowerCase();
+stringEncriptada = stringEncriptada.toLowerCase();
 
 for(let i=0; i <matrizCodigo.length; i++) {
-    if(stringEncriptada.includes(matrizCodigo[i][o])){
-        stringEncriptada = stringEncriptada.replaceAll(matrizCodigo[i][o], matrizCodigo [i][1])
+    if(stringEncriptada.includes(matrizCodigo[i][0])) {
+        stringEncriptada = stringEncriptada.replaceAll(matrizCodigo[i][0], matrizCodigo [i][1])
         }
     }
-    
+    return stringEncriptada;
+
 }
-return stringEncriptada;
+
+
+
+//Desencriptar mensaje
+
+function btnDesencriptar() {
+    const textoEncriptado = desencriptar(inputTexto.value)
+    mensaje.value=textoEncriptado
+    inputTexto.value = ""
+}
+
+function desencriptar(stringDesencriptada) {
+let matrizCodigo =[["e", "enter"], ["i", "ines"], ["a", "ai"], ["o", "ober"], ["u","ufat"]];
+stringDesencriptada=stringDesencriptada.toLowerCase();
+
+for(let i=0; i <matrizCodigo.length; i++) {
+    if(stringDesencriptada.includes(matrizCodigo[i][1])){
+        stringDesencriptada = stringDesencriptada.replaceAll(matrizCodigo[i][1], matrizCodigo [i][0])
+        }
+    }
+    return stringDesencriptada;
+ 
+}
+
+
 
 function copiar() {
+    
     mensaje.select();
-    Navigator.clipboar.writeText(mensaje.value)
-    mensaje.value="";
+    navigator.clipboard.writeText(mensaje.value)
+    mensaje.value= "";
     alert("Texto Copiado")
 }
